@@ -12,7 +12,7 @@ const moviesSearch = async (req, res) => {
         let url = process.env.OMDB_API + searchWord
         let moviesSearch = await fetch(url, { method: "GET" })
         let data = await moviesSearch.json();
-        console.log(req.body.name, url, data)
+        // console.log(req.body.name, url, data)
         if (data.Search) {
             res.render('searchMoviesList', { "data": data })
         } else {
@@ -49,7 +49,7 @@ const getFavList = async (req, res) => {
         let favSqlQuery = `select * from favMovies;`
         let getFavList = await mysql.promise().query(favSqlQuery);
         let data = getFavList[0];
-        console.log(getFavList[0])
+        // console.log(getFavList[0])
         res.render('favMovies', {data: data})
     } catch(e){
         console.log(e)
