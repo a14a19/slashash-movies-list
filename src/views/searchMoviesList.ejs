@@ -30,11 +30,17 @@
               <p class="card-text"><%= movie.Year %></p>
               <p class="card-text"><%= movie.Type %></p>
             </div>
-            <button class="btn btn-primary">Add Favorites</button>
+            <button class="btn btn-primary" onclick="handleAdd()">Add Favorites</button>
           </div>
         </div>
         <% }); %>
       </div>
     </div>
   </body>
+  <script>
+    function handleAdd(){
+        console.log("this is logged")
+        window.location.pathname = '/';
+    }
+  </script>
 </html>
