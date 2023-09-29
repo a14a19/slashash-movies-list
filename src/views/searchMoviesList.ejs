@@ -3,19 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Movies</title>
   </head>
   <body>
+    <div class="ms-5 mt-3">
+        <button class="btn btn-primary">
+            Back
+        </button>
+    </div>
     <div class="container-fluid">
-      <div className="row flex-wrap mx-3">
+      <div class="row d-flex flex-wrap mx-3">
         <% data.Search.forEach(function(movie){ %>
         <div class="col col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2 my-4 px-1" style="min-height: 430px;">
           <div class="card">
@@ -23,14 +21,14 @@
               class="card-img-top"
               src="<%= movie.Poster %>"
               alt="Movie image"
-              style="width: 100%;"
+              style="width: 100%; height: 353px;"
             />
             <div class="card-body">
-              <h4 class="card-title"><%= movie.Title %></h4>
+              <h4 class="card-title text-truncate" title="<%= movie.Title %>"><%= movie.Title %></h4>
               <p class="card-text"><%= movie.Year %></p>
               <p class="card-text"><%= movie.Type %></p>
+              <button class="btn btn-primary" onclick="handleAdd()">Add Favorites</button>
             </div>
-            <button class="btn btn-primary" onclick="handleAdd()">Add Favorites</button>
           </div>
         </div>
         <% }); %>
