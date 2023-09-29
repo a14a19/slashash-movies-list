@@ -1,5 +1,6 @@
 require('dotenv').config();
 const axios = require('axios');
+const mysql = require('../config/db')
 
 const moviesSearch = async (req, res) => {
     try {
@@ -18,7 +19,11 @@ const moviesSearch = async (req, res) => {
     }
 }
 const favMovies = async (req, res) => {
-
+    try {
+        // mysql.promise().query(`select `)
+    } catch (e){
+        console.log(e)
+    }
 }
 
 
