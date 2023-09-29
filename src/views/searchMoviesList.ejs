@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+    />
+    <title>Movies</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div className="row flex-wrap mx-3">
+        <% data.Search.forEach(function(movie){ %>
+        <div class="col col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2 my-4 px-1" style="min-height: 430px;">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="<%= movie.Poster %>"
+              alt="Movie image"
+              style="width: 100%;"
+            />
+            <div class="card-body">
+              <h4 class="card-title"><%= movie.Title %></h4>
+              <p class="card-text"><%= movie.Year %></p>
+              <p class="card-text"><%= movie.Type %></p>
+            </div>
+            <button class="btn btn-primary">Add Favorites</button>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+    />
+    <title>Movies</title>
+  </head>
+  <body>
+    <h1 class="text-center">Movies Search</h1>
+    <form class="container" action="/movies/search" method="POST">
+      <div class="row">
+        <input type="text" placeholder="Search movies..." class="form-control col-4" name='name' id="name"/>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="() => {console.log('favorite')}">Favorites</button>
+        </div>
+      </div>
+    </form>
+    <!-- needs to display list here -->
+  </body>
+</html>
