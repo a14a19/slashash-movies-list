@@ -13,10 +13,16 @@
         <input type="text" placeholder="Search movies..." class="form-control col-4" name='name' id="name"/>
         <div class="mt-2">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-primary" onclick="() => {console.log('favorite')}">Favorites</button>
+            <button type="button" class="btn btn-primary" onclick="favPage()">Favorites</button>
         </div>
       </div>
     </form>
     <!-- needs to display list here -->
+    <script>
+        function favPage(){
+            console.log("open fav page")
+            window.location.pathname = '/movies/get/favorite';
+        }
+    </script>
   </body>
 </html>

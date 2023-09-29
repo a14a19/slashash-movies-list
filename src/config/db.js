@@ -19,8 +19,8 @@ connection.connect(function (err) {
         console.log("Database created".blue);
 
         connection.query(`USE ${process.env.DB_DATABASE};`)
-        
-        var sql = "CREATE TABLE IF NOT EXISTS favMovies (Title VARCHAR(255), Year VARCHAR(255), imdbID VARCHAR(255), Type VARCHAR(255), Poster VARCHAR(255))";
+
+        var sql = "CREATE TABLE IF NOT EXISTS favMovies (Title VARCHAR(255), Year VARCHAR(255), imdbID VARCHAR(255), Type VARCHAR(255), Poster LONGTEXT)";
         connection.query(sql, function (err, result) {
             if (err) throw err;
             console.log("Table created".red);

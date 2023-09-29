@@ -1,7 +1,8 @@
 const MoviesRoutes = require('express').Router();
-const { moviesSearch } = require('../controllers/movies.controllers');
+const { moviesSearch, favMovies, getFavList } = require('../controllers/movies.controllers');
 
 MoviesRoutes.post('/search', moviesSearch);
-MoviesRoutes.get('/favorite', moviesSearch);
+MoviesRoutes.post('/add/favorite', favMovies);
+MoviesRoutes.get('/get/favorite', getFavList);
 
 module.exports = MoviesRoutes;
